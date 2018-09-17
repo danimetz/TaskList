@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav>
+      <h1>Tasklist</h1>
+      <ul>
+        <li>
+          Add Task
+        </li>
+        <li>
+          All Tasks
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>
+        Copywrite 2018
+      </p>
+    </footer>
   </body>
 </html>
