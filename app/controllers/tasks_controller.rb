@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    id = params[:id]
+    id = params[:id].to_i
     @task = Task.find_by(id: id)
 
     if @task.nil?
