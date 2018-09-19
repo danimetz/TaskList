@@ -6,7 +6,10 @@
       <strong><%= link_to "#{task.name}", task_path(task.id) %></strong>
     </li>
     <p>
-      <%= "#{task.description} is Due: #{task.completion_date}" %>
+      <%= "#{task.description} is Due: #{task.due_date}" %>
     </p>
+      <%= link_to "Edit | ", edit_task_path(task.id)%>
+      <%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: 'Are you sure you want to delete this task?'} %>
+      <br>
   <% end %>
 </ol>
