@@ -11,5 +11,23 @@ class TasksController < ApplicationController
     if @task.nil?
      render :notfound, status: :not_found
     end
+  end
+
+  def create
+  end
+
+  def new
+    @task = Task.new
+  end
+
+  def edit
+    @task = 
+  end
+
+  def update
+  end
+
+  def destroy
+  end
 
 end
