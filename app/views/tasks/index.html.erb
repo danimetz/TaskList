@@ -3,7 +3,7 @@
 <ol>
   <% @tasks.each do |task| %>
     <li>
-      <strong><%= "#{task.name}" %></strong>
+      <strong><%= link_to "#{task.name}", task_path(task.id) %></strong>
     </li>
     <p>
       <%= "#{task.description} is Due: #{task.completion_date}" %>
