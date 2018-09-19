@@ -3,10 +3,10 @@
 <ol>
   <% @tasks.each do |task| %>
     <li>
-      <strong><%= "#{task[:name]}" %></strong>
+      <strong><%= "#{task.name}" %></strong>
     </li>
     <p>
-      <%= "#{task[:description]} is Due: #{task[:completion_date]}" %>
+      <%= "#{task.description} is Due: #{task.completion_date}" %>
     </p>
   <% end %>
 </ol>
