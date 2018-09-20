@@ -4,8 +4,11 @@
 <% else %>
 
   <h1><%= @task.name %></h1>
-  <h3><%= @task.description %></h3>
+  <h3><%= @task.status %></h3>
+  <h4><%= @task.description %></h4>
   <p><%= "Due Date: #{@task.due_date}" %></p>
+  <p><%= "Completion Date: #{@task.completion_date}" %></p>
+
 
 <div>
   <%= link_to "Edit #{@task.name}", edit_task_path(@task.id)%>

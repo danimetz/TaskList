@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(name: params[:task][:name], description: params[:task][:description], due_date: params[:task][:due_date]) #instantiate a new book
+    @task = Task.new(name: params[:task][:name], description: params[:task][:description], due_date: params[:task][:due_date], status: "Incomplete") #instantiate a new book
     if @task.save # save returns true if the database insert succeeds
       redirect_to root_path # go to the index so we can see the book in the list
     else # save failed :(
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = Task.new(status: "Incomplete")
   end
 
   def edit
@@ -47,5 +47,19 @@ class TasksController < ApplicationController
 
     redirect_to root_path
   end
+
+  def complete
+    @task = Task.find(params[:id].to_i)
+    if @task.completion_date == nil
+      @task.status = "Complete"
+      @task.completion_date = Date.today
+    else
+      @task.status = "Incomplete"
+      @task.completion_date = nil
+    end
+    @task.save
+    redirect_to root_path
+  end
+
 
 end
