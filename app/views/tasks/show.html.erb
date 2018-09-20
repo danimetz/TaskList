@@ -5,7 +5,7 @@
 
   <h1><%= @task.name %></h1>
   <h3><%= @task.description %></h3>
-  <p><%= @task.due_date %></p>
+  <p><%= "Due Date: #{@task.due_date}" %></p>
 
 <div>
   <%= link_to "Edit #{@task.name}", edit_task_path(@task.id)%>

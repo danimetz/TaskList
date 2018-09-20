@@ -14,23 +14,35 @@
  *= require_self
  */
  html {
-   background-color: yellow;
+   font-family: sans-serif;
  }
 
- h1 {
+ body {
+   display: grid;
+   grid-template: 90% 10%/ 25% 75%;
+ }
+
+footer {
+  grid-column: span 2;
+  font-size: .5em;
+}
+
+ body h1{
    text-transform: capitalize;
  }
 
  nav ul {
    list-style-type: none;
+   margin-left: 0 ;
  }
 nav ul li {
   border-color: black;
   border-radius: 5px;
+  margin-left: 0;
 }
 
 footer {
   display: flex;
   justify-content: center;
-  
+
 }
