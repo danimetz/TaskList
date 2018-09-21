@@ -17,24 +17,38 @@
    font-family: sans-serif;
  }
 
+ a:link {
+    text-decoration: none;
+    color: white;
+}
+
  section.flex {
    display: flex;
    justify-content: space-around;
  }
 main {
   width: auto;
+  border: black 1px;
+  background-color: #F4D35E;
 }
 footer {
-  justify-content: center
+  justify-content: center;
   font-size: .5em;
+  background-color: #19647E;
+  color: white;
+
 }
 .complete {
   text-decoration: line-through;
 }
  body h1{
-   text-transform: capitalize;
+   text-transform: uppercase;
+   font-size: 2em;
  }
 
+ nav {
+   background-color: #EE964B;
+ }
  nav ul {
    list-style-type: none;
    margin-left: 0 ;
@@ -42,15 +56,17 @@ footer {
 nav ul li {
   text-decoration: none;
   background-color: #28AFB0;
-  border: solid black 1px;
-  border-radius: 5px;
+  border: solid white 2px;
+  border-radius: 10px;
   padding: 10px;
   margin-left: 0;
   margin-bottom: 1em;
-  width: 100px;
+  width: 75px;
 
 }
-
+ol li {
+  padding: 1em 1em
+}
 footer {
   display: flex;
   justify-content: center;

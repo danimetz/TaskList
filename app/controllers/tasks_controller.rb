@@ -14,7 +14,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(name: params[:task][:name], description: params[:task][:description], due_date: params[:task][:due_date], status: "Incomplete") #instantiate a new book
+    @task = Task.new(task_params) #instantiate a new book
+    @task.status = "Incomplete"
     if @task.save # save returns true if the database insert succeeds
       redirect_to root_path # go to the index so we can see the book in the list
     else # save failed :(
@@ -33,10 +34,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id].to_i)
-    @task.name = params[:task][:name]
-    @task.description = params[:task][:description]
-    @task.due_date = params[:task][:due_date]
-
+    @task.update(task_params)
     @task.save # save returns true if the database insert succeeds
     redirect_to task_path # go to the index so we can see the book in the list
   end
@@ -59,6 +57,12 @@ class TasksController < ApplicationController
     end
     @task.save
     redirect_to root_path
+  end
+
+  private
+
+  def task_params
+    return params.require(:task).permit(:name, :description, :due_date)
   end
 
 
